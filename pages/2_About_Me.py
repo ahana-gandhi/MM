@@ -126,23 +126,9 @@ st.markdown("""
     <div class="row">
         <div class="col-md-4">
             <div class="team-member">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
-                <h3>Dr. Sarah Chen</h3>
-                <p>Music Therapist & Founder</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="team-member">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
-                <h3>Dr. James Rodriguez</h3>
-                <p>AI Research Director</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="team-member">
-                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team Member">
-                <h3>Dr. Priya Patel</h3>
-                <p>Clinical Psychologist</p>
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQGwn6HzwiwNig/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704568398273?e=1752710400&v=beta&t=0lvWqYwzbHF3hQ9dWl2JU6b457dvU6pLqtpgmkR8QJQ" alt="Team Member">
+                <h3>Ahana Gandhi</h3>
+                <p>Founder</p>
             </div>
         </div>
     </div>
