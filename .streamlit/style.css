@@ -1,0 +1,80 @@
+/* Material Design Styling */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Card styling */
+.stButton > button {
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.stButton > button:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
+}
+
+/* Section styling */
+div[data-testid="stMarkdownContainer"] > div {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+div[data-testid="stMarkdownContainer"] > div:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Slider styling */
+.stSlider > div > div > div {
+    background-color: #6200EE;
+}
+
+/* Radio button styling */
+.stRadio > div {
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Selectbox styling */
+.stSelectbox > div > div {
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Header styling */
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #212121;
+}
+
+/* Text styling */
+p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* Container styling */
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Success message styling */
+.stAlert {
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Audio player styling */
+audio {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+} 
