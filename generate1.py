@@ -80,17 +80,16 @@ def watch_task_status(task_id, interval=10):
 
 
 def create_and_compose(text_prompt: str):
-    # track_meta = {"prompt": {"text": text_prompt}, "format": "wav"}
+    track_meta = {"prompt": {"text": text_prompt}, "format": "wav"}
 
-    # compose_res = compose_track(track_meta)
-    # task_id = compose_res["task_id"]
-    # # print(f"Started composition task with ID: {task_id}")
+    compose_res = compose_track(track_meta)
+    task_id = compose_res["task_id"]
+    # print(f"Started composition task with ID: {task_id}")
 
-    # generation_meta = watch_task_status(task_id)
-    # # print(generation_meta)
-    # track_url = generation_meta["meta"]["track_url"]
-    # # print("Downloading track file")
-    # handle_track_file(os.path.join(os.getcwd(), "composed_track.mp3"), track_url)
-    # # print("Composed! you can find your track as `composed_track.mp3`")
-    time.sleep(30)  # Simulate processing time
+    generation_meta = watch_task_status(task_id)
+    # print(generation_meta)
+    track_url = generation_meta["meta"]["track_url"]
+    # print("Downloading track file")
+    handle_track_file(os.path.join(os.getcwd(), "composed_track.mp3"), track_url)
+    # print("Composed! you can find your track as `composed_track.mp3`")
     return True
