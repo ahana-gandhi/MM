@@ -1,5 +1,6 @@
 import streamlit as st
-from generate1 import generate_music
+from generate1 import create_and_compose
+import time
 
 # Set page configuration
 st.set_page_config(
@@ -363,11 +364,47 @@ elif st.session_state.step == 3:
     with col3:
         if st.button("Generate My Music", key="generate_music"):
             if st.session_state.instrument:
-                with st.spinner("Creating your personalized therapeutic music..."):
-                    st.session_state.music_ready = generate_music(
-                        st.session_state.instrument, 
-                        st.session_state.speed
-                    )
+                # Create a nice loading experience
+                progress_container = col2.container()
+                with progress_container:
+                    col2.markdown("""
+                    <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                            border-radius: 15px; color: white; margin: 1rem 0;">
+                        <h2 style="margin-bottom: 1rem;">🎵 Creating Your Therapeutic Music</h2>
+                        <p style="opacity: 0.9;">Analyzing your preferences and composing your personalized track...</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                    
+                    # Progress bar with status
+                    progress_bar = col2.progress(0)
+                    status_text = col2.empty()
+                    
+                    steps = [
+                        "🎼 Analyzing your mental wellness assessment...",
+                        "🎹 Selecting optimal musical elements...",
+                        "🎵 Composing with therapeutic frequencies...",
+                        "🎶 Fine-tuning tempo and harmony...",
+                        "✨ Adding personalized touches...",
+                        "🎧 Finalizing your therapeutic track..."
+                    ]
+                    
+                    for i, step in enumerate(steps):
+                        status_text.info(step)
+                        progress_bar.progress((i + 1) / len(steps))
+                        time.sleep(5)
+                    
+                    # Generate actual music
+                    st.session_state.music_ready = create_and_compose(f"30 seconds soothing song using {st.session_state.instrument}")
+                    
+                    status_text.success("🎉 Your personalized music is ready!")
+                    time.sleep(1)
+                
+                # Clear loading UI
+                progress_container.empty()
+                
+                # Show success and proceed
+                st.balloons()
+                st.success("🎶 Your therapeutic music has been created! Scroll down to listen.")
                 st.session_state.step = 4
                 st.rerun()
             else:
@@ -390,7 +427,7 @@ elif st.session_state.step == 4:
     </div>
     """, unsafe_allow_html=True)
     
-    audio_file_path = "musicgen_out2.wav"
+    audio_file_path = "composed_track.mp3"  # Path to the generated audio file
     st.audio(audio_file_path)
     
     # Feedback section
