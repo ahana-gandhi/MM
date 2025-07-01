@@ -4,7 +4,7 @@ import requests
 import streamlit as st
 
 BACKEND_V1_API_URL = "https://public-api.beatoven.ai/api/v1"
-BACKEND_API_HEADER_KEY = st.secrets("BEATOVEN_API")
+BACKEND_API_HEADER_KEY = st.secrets["BEATOVEN_API"]
 
 
 def compose_track(request_data):
